@@ -19,7 +19,7 @@ namespace Coffee_Machine_SOLID.Classes
             _waterContainer = new WaterContainer();
             _coffeeBeanContainer = new CoffeeBeanContainer();
         }
-        public void Start()
+        public override void Start()
         {
             if (!_isOn)
             {

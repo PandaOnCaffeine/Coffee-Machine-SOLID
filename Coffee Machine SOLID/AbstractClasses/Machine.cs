@@ -17,5 +17,6 @@ namespace Coffee_Machine_SOLID.AbstractClasses
         {
             _isOn = false;
         }
+        public abstract void Start();
     }
 }

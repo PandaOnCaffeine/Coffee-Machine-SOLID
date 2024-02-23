@@ -43,13 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractClasses\Container.cs" />
     <Compile Include="AbstractClasses\Machine.cs" />
-    <Compile Include="Classes\CoffeeBeanContainer.cs" />
+    <Compile Include="AbstractClasses\Powder.cs" />
     <Compile Include="Classes\CoffeeMachine.cs" />
-    <Compile Include="Classes\WaterContainer.cs" />
+    <Compile Include="Classes\CoffeePowder.cs" />
     <Compile Include="Interfaces\ICoffeeMachine.cs" />
-    <Compile Include="Interfaces\IContainer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

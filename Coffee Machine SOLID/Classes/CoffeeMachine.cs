@@ -12,12 +12,12 @@ namespace Coffee_Machine_SOLID.Classes
     internal class CoffeeMachine : Machine, ICoffeeMachine
     {
         private bool _filter = false;
-        private readonly WaterContainer _waterContainer;
-        private readonly CoffeeBeanContainer _coffeeBeanContainer;
+        private int _water = 0;
+        private Powder _powder;
+
         public CoffeeMachine()
         {
-            _waterContainer = new WaterContainer();
-            _coffeeBeanContainer = new CoffeeBeanContainer();
+            _powder = new CoffeePowder();
         }
         public override void Start()
         {
@@ -33,26 +33,29 @@ namespace Coffee_Machine_SOLID.Classes
                 return;
             }
 
-            if (_waterContainer.WaterAmount <= 0)
+            if (_water <= 0)
             {
                 Console.WriteLine("Not Any Water Left");
                 return;
             }
 
-            if (_coffeeBeanContainer.BeanAmount <= 0)
+            if (_powder.Amount <= 0)
             {
-                Console.WriteLine("Not Any Coffee Beans Left");
+                Console.WriteLine($"Not Any {_powder.Name} Left");
                 return;
             }
-
-            int count = 0;
-            while (_waterContainer.WaterAmount >= 1 && _coffeeBeanContainer.BeanAmount >= 1)
+            Brew();
+        }
+        public void Brew()
+        {
+            int count = 1;
+            while (_water >= 1 && _powder.Amount >= 1)
             {
-                count++;
                 Console.WriteLine($"Cup nr {count} of coffee");
                 Thread.Sleep(400); //Wait time between each cup of coffee
-                _waterContainer.WaterAmount -= 1;
-                _coffeeBeanContainer.BeanAmount -= 1;
+                _water -= 1;
+                _powder.Amount -= 1;
+                count++;
             }
             Console.WriteLine("Done");
             _filter = false;
@@ -62,13 +65,17 @@ namespace Coffee_Machine_SOLID.Classes
         {
             _filter = true;
         }
-        public void AddWater(int amount)
+        public void AddWater()
         {
-            _waterContainer.Refill(amount);
+            Console.WriteLine("How Many Cups worth of Water do you want add?");
+            int amount = Convert.ToInt32(Console.ReadLine());
+            _water += amount;
         }
-        public void AddBeans(int amount)
+        public void AddPowder()
         {
-            _coffeeBeanContainer.Refill(amount);
+            Console.WriteLine("How Many Cups worth of Powder do you want add?");
+            int powderAmount = Convert.ToInt32(Console.ReadLine());
+            _powder.Amount += powderAmount;
         }
     }
 }

@@ -28,20 +28,16 @@ namespace Coffee_Machine_SOLID
                         WipeThenWrite("Turned On");
                         break;
                     case ConsoleKey.D3:
-                        Console.WriteLine("How Many Coffee cups worth of Water do you want add?");
-                        int water = Convert.ToInt32(Console.ReadLine());
-                        coffeeMaker.AddWater(water);
-                        WipeThenWrite("Water Added");
-                        break;
-                    case ConsoleKey.D4:
-                        Console.WriteLine("How Many Coffee cups worth of Coffee Beans do you want add?");
-                        int beans = Convert.ToInt32(Console.ReadLine());
-                        coffeeMaker.AddBeans(beans);
-                        WipeThenWrite("Beans Added");
-                        break;
-                    case ConsoleKey.D5:
                         coffeeMaker.AddNewFilter();
                         WipeThenWrite("Filter Added");
+                        break;
+                    case ConsoleKey.D4:
+                        coffeeMaker.AddWater();
+                        WipeThenWrite("Water Added");
+                        break;
+                    case ConsoleKey.D5:
+                        coffeeMaker.AddPowder();
+                        WipeThenWrite("Beans Added");
                         break;
                     default:
                         WipeThenWrite("Not A Valid Input");
@@ -57,12 +53,12 @@ namespace Coffee_Machine_SOLID
             Console.WriteLine("");
             Console.WriteLine("1. Start CoffeeMaker");
             Console.WriteLine("2. Turn On CoffeeMaker");
-            Console.WriteLine("3. Add Water To CoffeeMaker");
-            Console.WriteLine("4. Add Coffee Beans To CoffeeMaker");
-            Console.WriteLine("5. Add Filter CoffeeMaker");
+            Console.WriteLine("3. Add Filter CoffeeMaker");
+            Console.WriteLine("4. Add Water To CoffeeMaker");
+            Console.WriteLine("5. Add Powder To CoffeeMaker");
         }
 
-        static void WipeThenWrite(string message) 
+        static void WipeThenWrite(string message)
         {
             Console.Clear();
             Console.WriteLine(message);

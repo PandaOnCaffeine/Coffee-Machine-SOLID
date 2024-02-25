@@ -7,6 +7,7 @@ namespace Coffee_Machine_SOLID.Classes
     {
         public Coffee(int cups) : base(cups)
         {
+
         }
 
         public override void AddIngredients()

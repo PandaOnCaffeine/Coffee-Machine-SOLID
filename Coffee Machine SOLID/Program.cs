@@ -20,6 +20,11 @@ namespace Coffee_Machine_SOLID
             Beverage tea = new Tea(1);
             coffeeMaker.Brew(tea); // Brew coffee
 
+            // Make espresso
+            coffeeMaker.AddWater(1); // Add water for 1 cups of espresso
+            Beverage espresso = new Espresso(); // only allows one cup, so no overload
+            coffeeMaker.Brew(espresso); // Brew espresso
+
             Console.ReadLine();
         }
     }

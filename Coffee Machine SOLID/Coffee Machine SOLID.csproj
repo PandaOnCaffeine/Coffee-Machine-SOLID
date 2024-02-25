@@ -43,11 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractClasses\Machine.cs" />
-    <Compile Include="AbstractClasses\Powder.cs" />
+    <Compile Include="AbstractClasses\Beverage.cs" />
     <Compile Include="Classes\CoffeeMachine.cs" />
-    <Compile Include="Classes\CoffeePowder.cs" />
-    <Compile Include="Interfaces\ICoffeeMachine.cs" />
+    <Compile Include="Classes\Coffee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

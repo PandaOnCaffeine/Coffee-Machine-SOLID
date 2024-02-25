@@ -46,6 +46,7 @@
     <Compile Include="AbstractClasses\Beverage.cs" />
     <Compile Include="Classes\CoffeeMachine.cs" />
     <Compile Include="Classes\Coffee.cs" />
+    <Compile Include="Classes\Tea.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
